@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>counter: <span id="countervalue">0</span> </h1>
+    <button onclick="increment()">Increment</button>
+    <button onclick="decrement()">decrement</button>
+    <script>
+        function createcounter(){
+            let count =0;
+
+            return{
+                Increment: ()=>{count++ ;updateUI();},
+                Decrement: ()=>{count--; updateUI();},
+                getValue: ()=> count
+            }
+
+        }
+
+        const counter = createcounter();
+
+        function updateUI(){
+            document.getElementById("countervalue").textContent=counter.getValue();
+        }
+        function increment(){
+            counter.Increment();
+        }
+        function decrement(){
+            counter.Decrement();
+        }
+    </script>
+</body>
+
+</html>

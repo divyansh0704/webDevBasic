@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promise and async await</title>
+</head>
+<body>
+    <h1>promise Async await</h1>
+    <button onclick="fetchdata()">fetch data</button>
+    <p id="output"></p>
+    <script>
+        function userdata(){
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    let success= true;
+                    if(success){
+                        resolve({name:"joy", age:25});
+                    }
+                    else{
+                        reject("failed to fetch data");
+                    }
+                },2000)
+            })
+        }
+        async function fetchdata(){
+            try{
+                document.getElementById("output").innerText="loading..."
+                let user = await userdata();
+                document.getElementById("output").innerText = `name: ${user.name}
+                 age: ${user.age}`;
+
+        
+
+            }catch(error){
+                document.getElementById("output").innerText = error;
+
+            }
+        }    
+    </script>
+    
+</body>
+</html>

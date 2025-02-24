@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>reduce</h1>
+    <p>original: <span id="ori"></span></p>
+    <p>reduced: <span id="mod"></span></p>
+    <button id="show">give sum</button>
+    <script>
+        function sum(arr){
+            return arr.reduce((acc,num)=>acc+num,0);
+        }
+        const arr = [1,2,3,4];
+        
+        const ori = arr.join(", ");
+        document.getElementById("ori").innerText=ori;
+        document.getElementById("show").addEventListener("click",function() {
+            const result = sum(arr);
+            document.getElementById("mod").innerText=result;
+        });
+    </script>
+</body>
+</html>

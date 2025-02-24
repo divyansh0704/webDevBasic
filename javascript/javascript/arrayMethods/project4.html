@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>sort array</h1>
+    <p>original: <span id="ori"></span></p>
+    <p>sorted: <span id="mod"></span></p>
+    <button id="show">sort it</button>
+    <script>
+        function sortit(arr){
+            return arr.sort((a,b) =>a-b);
+        }
+        const num = [9,5,1,4];
+        
+        document.getElementById("ori").innerText=num.join(", ");
+        document.getElementById("show").addEventListener("click",function(){
+            const sorty = sortit(num);
+            document.getElementById("mod").innerText=sorty.join(", ")
+        })
+    </script>
+    
+</body>
+</html>

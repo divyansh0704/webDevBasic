@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>time delay</title>
+</head>
+<body>
+    <h1>simulate delay</h1>
+    <button onclick="simulatedelay()">start delay</button>
+    <p id="here"></p>
+    <script>
+        function simulatedelay(){
+            document.getElementById("here").innerText="waiting for 2 seconds...."
+
+            delay(2000).then(()=>{
+                document.getElementById("here").innerText="promise resolved after 2 seconds!";
+            })
+        }
+        function delay(ms){
+            return new Promise((resolve)=>{
+                setTimeout(()=>{
+                    resolve();
+                },2000)
+            })
+        }
+    </script>
+    
+</body>
+</html>

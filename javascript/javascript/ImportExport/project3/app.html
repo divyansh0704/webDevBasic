@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>greet on click</title>
+</head>
+<body>
+    <h1>Dynamic import example</h1>
+    <button id="onclick">Click to Greet</button>
+    <script>
+        document.getElementById("onclick").addEventListener("click",async()=>{
+            const {greet}= await import('./Greeting.js');
+            alert(greet("Kavyum Sachdeva"));
+        })
+    </script>
+    
+</body>
+</html>

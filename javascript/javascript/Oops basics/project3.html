@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>car details</title>
+</head>
+
+<body>
+    <h1>car details</h1>
+    <button id="show">show details</button>
+    <p id="here"></p>
+    <script>
+        class Car {
+            constructor(model, year, color) {
+                this.model = model;
+                this.color = color;
+                this.year = year;
+
+            }
+            getdetails() {
+                return `model: ${this.model},color: ${this.color},year: ${this.year}`;
+            }
+        }
+        document.getElementById("show").addEventListener("click",function(){
+            const mycar = new Car("toyato","1920","red");
+            document.getElementById("here").innerText = mycar.getdetails();
+        })
+
+    </script>
+
+</body>
+
+</html>

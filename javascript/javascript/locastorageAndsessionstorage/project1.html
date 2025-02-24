@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>save name to local storage</title>
+</head>
+<body>
+    <h1>Enter the name</h1>
+    <form id="nameform">
+        <input type="text" id="whatname" placeholder="enter name here">
+        <button id="sub">submit</button>
+    </form>
+    <h2 id="greet"></h2>
+    <script>
+        document.addEventListener("DOMContentLoaded",function(){
+            let savedname = localStorage.getItem("name");
+            if(savedname){
+                document.getElementById("greet").innerText=`welcome ${savedname}!`
+            }
+        })
+        document.getElementById("nameform").addEventListener("submit",function(event){
+            event.preventDefault();
+            let name = document.getElementById("whatname").value;
+            localStorage.setItem("name",name);
+            document.getElementById("greet").innerText =`welcome ${name}!`
+        })
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>filter numbers</h1>
+    <p id="oi">original: <span id="ori"></span></p>
+    <p>filtered: <span id="filty"></span></p>
+    <button id="filter">filter it</button>
+
+    <script>
+        function filterit(arr){
+            return arr.filter((num)=>num>5)
+        }
+        const number = [3,7,9,6];
+        const filtered = filterit(number);
+        const num = number.join(", ");
+        const filt = filtered.join(", ")
+        document.getElementById("ori").innerText = num;
+        document.getElementById("filter").addEventListener("click",function(){
+            document.getElementById("filty").innerText = filt;
+        })
+    </script>
+</body>
+</html>

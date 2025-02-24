@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>timeout</title>
+</head>
+<body>
+    <h1>countdown</h1>
+    <p id="count"></p>
+    <script>
+        function countdown(seconds){
+            console.log(seconds);
+            if(seconds>0){
+                document.getElementById("count").innerText=seconds;
+                setTimeout(()=>countdown(seconds-1),1000);
+            }
+            else{
+                console.log("time's up!");
+                document.getElementById("count").innerText="time is up";
+                setTimeout(() => countdown(20), 1000); 
+
+            }
+
+        }
+        countdown(20);
+    </script>
+    
+</body>
+</html>

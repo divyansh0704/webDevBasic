@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>refresh counter</title>
+</head>
+<body>
+    <h1>refresh counter</h1>
+    <p>refresh the page to see the counter increase</p>
+    <h2>counter: <span id="counter"></span></h2>
+    <script>
+        let counter = localStorage.getItem("counter");
+        if(counter===null){
+            counter = 0;
+        }
+        else{
+            counter = parseInt(counter)+1;
+
+
+        }
+        localStorage.setItem("counter",counter);
+        document.getElementById("counter").innerText = counter;
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>manage names</h1>
+    <p>current names: <span id="names"></span></p>
+    <input type="text" id="nameinput" placeholder="enter name">
+    <button id="addname">add name</button>
+    <button id="removename">remove name</button>
+    <script>
+        function updatename(){
+            namedisplay.innerText=names.join(", ")
+        }
+        const names = ["rinku","ajay","raju"];
+        const inputname = document.getElementById("nameinput");
+        const namedisplay = document.getElementById("names");
+        document.getElementById("addname").addEventListener("click",function(){
+            const newname = nameinput.value.trim();
+            if(newname){
+                names.push(newname);
+                nameinput.value = "";
+                updatename();
+            }
+            else{
+                alert("please enter valid name")
+            }
+
+        })
+        document.getElementById("removename").addEventListener("click",function(){
+            if(names.length>0){
+                names.pop();
+                updatename();
+            }
+            else{
+                alert("no name left to remove");
+            }
+        })
+        updatename();
+    </script>
+    
+</body>
+</html>

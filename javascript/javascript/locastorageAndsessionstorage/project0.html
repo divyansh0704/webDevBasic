@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>storage example</h1>
+    <input type="text" id="userInput" placeholder="enter something">
+    <button onclick="saveToLocal()">save to local storage</button>
+    <button onclick="saveToSession()">save to session storage</button>
+    <button onclick="getFromStorage()">retrieve data</button>
+    <p id="output"></p>
+
+    <script>
+        function saveToLocal(){
+            let num = document.getElementById("userInput").value;
+            localStorage.setItem("storedData",num);
+            alert("saved to local storage");
+
+        }
+        function saveToSession(){
+            let num = document.getElementById("userInput").value;
+            sessionStorage.setItem("storedData",num);
+            alert("saved to local storage");
+
+        }
+        function getFromStorage(){
+            let localData  = localStorage.getItem("storedData");
+            let sessionData = sessionStorage.getItem("storedData");
+
+            document.getElementById("output").innerText="Local Data: "+(localData || "no data")+"\nSession Storage: " + (sessionData || "no data")
+
+
+
+        }
+    </script>
+
+</body>
+</html>

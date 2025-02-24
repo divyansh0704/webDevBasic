@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ES6 example</h1>
+    <button onclick="examples()">show ES6 examples</button>
+    <script>
+        function examples(){
+            //destructuring
+            const person = { name: "john", age: 34}
+            const {name ,age}=person;
+            console.log(`name: ${name}, age: ${age}`);
+
+            // spread operator
+            const arr1 = [1,2,3];
+            const arr2 = [...arr1,4,5];
+            console.log(arr2);
+            
+            //rest parameter
+            function sum(...numbers){
+                return numbers.reduce((acc,curr)=>acc+curr,0);
+            }
+            console.log(sum(1,2,3,4));
+
+            //arrow function
+            const add = (a,b)=>a+b;
+            console.log(add(1,2));
+
+            //template literals
+            const greet = `hello, ${name}`;
+            console.log(greet)
+
+        }
+    </script>
+</body>
+</html>

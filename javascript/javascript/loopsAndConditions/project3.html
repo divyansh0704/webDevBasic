@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loop through array</title>
+    <script>
+        function print(){
+            const names = ["john","mery","vicky","vijay"];
+
+            let output = " ";
+
+            for(let i=0;i<names.length;i++){
+                console.log(names[i]);
+                output+=names[i]+ "<br>" ;
+
+
+
+            }
+            document.getElementById("names").innerHTML = output;
+        }
+
+    </script>
+</head>
+<body>
+    <h1>Loop through names</h1>
+    <button onclick="print()">print names</button>
+    <p id="names"></p>
+    
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="msg">Loading...</h1>
+    <script>
+        const myPromise = new Promise((resolve)=>{
+            setTimeout(()=>{
+                resolve("Data loaded");
+            },1000)
+        })
+        myPromise.then((message)=>{
+            document.getElementById("msg").innerText=message;
+        })
+    </script>
+    
+</body>
+</html>

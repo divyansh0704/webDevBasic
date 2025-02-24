@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>spread operator</h1>
+    <p>see it on console</p>
+    <p>arr1: <span id="arr1"></span></p>
+    <p>arr1: <span id="arr2"></span></p>
+    <button onclick="mergeit()">merge array</button>
+    <p>result: <span id="result"></span></p>
+    <script>
+        let arr1 = [1, 2, 3, 4, 5];
+
+
+        let arr2 = [6, 7, 8, 9, 10];
+        document.getElementById("arr1").innerText = arr1;
+        document.getElementById("arr2").innerText = arr2;
+        function mergeit() {
+
+
+
+            let result = [...arr1, ...arr2];
+
+            console.log(result);
+            setTimeout(()=>{
+                document.getElementById("result").innerText = result;
+
+            },2000)
+            
+        }
+    </script>
+</body>
+
+</html>

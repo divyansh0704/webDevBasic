@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculate square </title>
+    <script>
+        function calculate(params) {
+            const num = document.getElementById("number").value;
+            const square = num * num;
+            document.getElementById("result").innerText = "square : " + square;
+
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <h1>calculate square</h1>
+
+    <label for="number">number : </label>
+    <input type="text" id="number" placeholder="enter number">
+    <button onclick="calculate()">calculate</button>
+    <p id="result"></p>
+
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array of numbers</title>
+</head>
+<body>
+    <h1>loop through array of numbers</h1>
+    <button onclick="numberLoop()">print numbers</button>
+    <p id="numbers"></p>
+    <script>
+        function numberLoop(){
+            let numbers = ["1","2","3","4","5"];
+            let output = " ";
+            for(let i=0;i<numbers.length;i++){
+                console.log(numbers[i]);
+                output+=numbers[i]+"<br>";
+
+            }
+            document.getElementById("numbers").innerHTML=output;
+        }
+    </script>
+</body>
+</html>

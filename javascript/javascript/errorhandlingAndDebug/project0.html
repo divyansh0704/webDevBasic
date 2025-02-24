@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>handling example</h1>
+    <button onclick="check()">check</button>
+    <script>
+        function check(){
+            try{
+                let num = prompt("enter the number: ");
+                if(isNaN(num)){
+                    throw new Error("enter valid number");
+                }
+                alert("valid number entered"+num);
+
+            }catch(error){
+                alert("error: "+error.message);
+                console.error("error: ",error);
+
+            }
+            finally{
+                console.log("error handling finished");
+            }
+        }
+
+    </script>
+    
+</body>
+</html>

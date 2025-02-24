@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date representer</title>
+    <script>
+        function giveDate(params) {
+
+            const date = new Date();
+            document.getElementById("date").innerText = date.toDateString();
+            
+        }
+
+
+    </script>
+</head>
+<body>
+    <h1>current date shower</h1>
+    <button onclick="giveDate()">show current date</button>
+    <p id="date"></p>
+    
+</body>
+</html>

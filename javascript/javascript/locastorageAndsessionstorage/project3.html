@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>make to-do list</title>
+</head>
+<body>
+    <h1>to-do list</h1>
+    <input type="text" id="inputtask" placeholder="enter the task">
+    <button id="addtask">add task</button>
+    <ul id="tasklist"></ul>
+    <script>
+        document.addEventListener("DOMContentLoaded",loadtasks);
+        document.getElementById("addtask").addEventListener("click",function(){
+            const taskInput = document.getElementById("inputtask").value;
+            if(taskInput.trim()===""){
+                return;
+            }
+            const tasks = JSON.parse(localStorage.getItem("list") ) || [];
+            tasks.push(taskInput);
+
+            localStorage.setItem("list",JSON.stringify(tasks));
+            document.getElementById("inputtask").value="";
+            loadtasks();
+
+        })
+        function loadtasks(){
+            const tasklist = document.getElementById("tasklist");
+            tasklist.innerHTML="";
+            let tasks = JSON.parse(localStorage.getItem("list"))||[];
+            tasks.forEach((task,index)=>{
+                const li = document.createElement("li");
+                li.textContent=task;
+
+                const removebtn = document.createElement("button");
+                removebtn.textContent="X";
+                removebtn.addEventListener("click",function(){
+                    removeTask(index);
+                })
+                li.appendChild(removebtn);
+                tasklist.appendChild(li);
+
+
+            })
+
+        }
+        function removeTask(index){
+            let tasks = JSON.parse(localStorage.getItem("list"))|| [];
+            tasks.splice(index,1);
+            localStorage.setItem("list",JSON.stringify(tasks));
+            loadtasks();
+        }
+    </script>
+
+    
+</body>
+</html>

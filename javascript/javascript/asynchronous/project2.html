@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Stimulating data fetch</h1>
+    <button id="btn">fetch data</button>
+    <p id="show"></p>
+    <script>
+        function fetchData(){
+            return new Promise((resolve)=>{
+                setTimeout(()=>{
+                    resolve("data fetched successfully");
+                },3000)
+            })
+
+        }
+
+        document.getElementById("btn").addEventListener("click",async()=> {
+            document.getElementById("show").innerText="fetching data";
+            try{
+                const result = await fetchData();
+                console.log(result);
+                document.getElementById("show").innerText=result;
+            }catch(error){
+                console.error("error: ",error);
+                document.getElementById("show").innerText= "failed to fetch data";
+            }
+
+
+
+        })
+    </script>
+</body>
+</html>

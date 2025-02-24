@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loop 1 to 10</title>
+    <script>
+        function print(){
+
+            let output = " "
+            for(let i=0;i<=10;i++){
+
+                output+=i+ " ";
+                
+
+                document.getElementById("here").innerText = output;
+
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <h1>loop 1 to 10 </h1>
+    <button onclick="print()">print</button>
+    <p id="here"></p>
+    
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>current time</h1>
+    <p id="show"></p>
+    <script>
+        function updateTime(){
+            const date = new Date();
+            const hour = date.getHours().toString().padStart(2,'0');
+            const minute =date.getMinutes().toString().padStart(2,'0');
+            const second = date.getSeconds().toString().padStart(2,'0');
+            document.getElementById("show").textContent=`${hour}:${minute}:${second}`;
+        }
+        setInterval(()=>updateTime(),1000);
+        updateTime();
+    </script>
+</body>
+</html>

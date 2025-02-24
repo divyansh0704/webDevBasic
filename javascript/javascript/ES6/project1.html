@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>destructering</title>
+</head>
+<body>
+    <h1>destructering</h1>
+    <p>see it on console</p>
+    <button onclick ="show()">show it </button>
+    <script>
+        function show(){
+            let obj = {
+                name: "john",
+                age: 25,
+                city: "derabassi"
+            }
+
+            let {name,age,city}=obj;
+
+            console.log(`name:${name}, age:${age}, city:${city}`);
+        }
+    </script>
+    
+</body>
+</html>

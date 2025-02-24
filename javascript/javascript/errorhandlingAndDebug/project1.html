@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>throw error</title>
+</head>
+<body>
+    <h1>age checker</h1>
+    <button onclick="checkage()">check age</button>
+    <script>
+        function checkage(){
+            try{
+                let num = prompt("enter your age: ");
+                if(num<0){
+                    throw new Error("age cannot be negative")
+                }
+                alert("age entered: "+num);
+
+            }catch(error){
+                alert("error occured"+error.message);
+                console.log("errror",error);
+            }
+            finally{
+                console.log("its finished");
+            }
+
+        }
+    </script>
+    
+</body>
+</html>
