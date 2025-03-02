@@ -1,0 +1,11 @@
+.sendbox{
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    align-items: center;
+    
+}
+input{
+    height: 16px;
+    font-size: medium;
+}
