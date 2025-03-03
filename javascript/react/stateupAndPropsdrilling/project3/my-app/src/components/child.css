@@ -1,0 +1,9 @@
+#bg{
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items:end;
+}
